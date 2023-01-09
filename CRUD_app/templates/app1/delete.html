@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+        <title>DELETE</title>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron container">
+    <form method="post">
+        {% csrf_token %}
+        <center><p>Do you really want to Delete this <span style="color:red;">{{data.product_name}}</span> </p></center>
+        <input type="submit" value="YES" class="btn btn-outline-danger col-4">
+        <a href="{% url 'show_url' %}"><button type="button" class="float-right btn btn-outline-warning col-4 float-right">NO</button>></a>
+    </form>
+</div>
+{% endblock %}
